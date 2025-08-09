@@ -1,0 +1,25 @@
+<!-- <div class="app">
+  <h1>Stocks Chart</h1>
+  <a routerLink="/">Home</a> |
+  <a routerLink="/data/IBM">IBM Chart</a>
+  <router-outlet></router-outlet>
+</div> -->
+<div class="app-container">
+  <header class="app-header">
+    <h1 class="app-title">View Stocks Chart</h1>
+    <nav class="app-nav">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+      <span class="separator">|</span>
+      <a routerLink="/data/IBM" routerLinkActive="active">IBM Chart</a>
+    </nav>
+  </header>
+
+  <main class="app-main">
+    <router-outlet></router-outlet>
+  </main>
+</div>

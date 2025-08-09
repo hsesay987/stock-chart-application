@@ -1,0 +1,51 @@
+<div class="stock-dashboard" *ngIf="companyInfo">
+  <!-- Company Card -->
+  <div class="company-card">
+    <img
+      [src]="companyLogoUrl"
+      alt="{{ companyInfo.Name }}"
+      class="company-logo"
+      (error)="companyLogoUrl = 'assets/default-logo.png'"
+    />
+
+    <div class="company-details">
+      <h2>
+        {{ companyInfo.Name || "Name Not Found" }} <span>({{ symbol }})</span>
+      </h2>
+      <div class="price-info">
+        <span class="price">${{ currentPrice | number : "1.2-2" }}</span>
+        <span class="change" [ngClass]="priceChange >= 0 ? 'up' : 'down'">
+          <span *ngIf="priceChange >= 0">&#9650;</span>
+          <span *ngIf="priceChange < 0">&#9660;</span>
+          {{ priceChange | number : "1.2-2" }} ({{
+            priceChangePercent | number : "1.2-2"
+          }}%)
+        </span>
+      </div>
+      <p><strong>Sector:</strong> {{ companyInfo.Sector || "N/A" }}</p>
+      <p><strong>Industry:</strong> {{ companyInfo.Industry || "N/A" }}</p>
+      <p>
+        <strong>Market Cap:</strong>
+        {{ companyInfo.MarketCapitalization | number }}
+      </p>
+    </div>
+  </div>
+
+  <!-- Extra Fundamentals -->
+  <div class="fundamentals">
+    <div><strong>P/E Ratio:</strong> {{ companyInfo.PERatio || "N/A" }}</div>
+    <div><strong>EPS:</strong> {{ companyInfo.EPS || "N/A" }}</div>
+    <div>
+      <strong>Dividend Yield:</strong> {{ companyInfo.DividendYield || "N/A" }}
+    </div>
+  </div>
+
+  <!-- Chart -->
+  <div class="chart-section">
+    <div echarts [options]="options" [loading]="loading" class="chart"></div>
+  </div>
+</div>
+
+<div *ngIf="!companyInfo && !loading" class="no-data">
+  <p>No data found for {{ symbol }}.</p>
+</div>

@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  background-color: black;
+}
+h1 {
+  color: white;
+  text-align: center;
+}
+h2 {
+  color: white;
+  text-align: center;
+}
+input {
+  width: 60%;
+  height: 50px;
+  border-radius: 20px;
+  padding: 10px;
+  border: 2px solid gray;
+  font-size: 20pt;
+  font-style: italic;
+  text-indent: 5px;
+}
+button{
+  margin-left: 10px;
+  position: center;
+  width: 7%;
+  font-size: 12pt;
+  color: white;
+  background-color: darkgrey;
+  cursor: pointer;
+}

@@ -1,0 +1,35 @@
+<div class="home-container">
+  <div class="hero">
+    <h1 class="app-title">📊 StockVision</h1>
+    <p class="tagline">Search for any stock to see real-time data and charts</p>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="Enter stock symbol (e.g., AAPL)"
+        class="search-input"
+      />
+      <button (click)="showData()" class="search-btn">Search</button>
+    </div>
+
+    <!-- Instructions -->
+    <p class="instructions">Use the search bar above to look up any stock.</p>
+    <p class="instructions">
+      ***NOTE: Only 5 API Calls per minute so chart data may not display if
+      frequently used.***
+    </p>
+
+    <!-- Sample Stock Card -->
+    <div class="sample-card">
+      <img src="https://logo.clearbit.com/apple.com" alt="Apple Logo" />
+      <div class="stock-info">
+        <h2>Apple Inc. (AAPL)</h2>
+        <p>Current Price: <span class="price green">$192.32</span></p>
+        <p>Change: <span class="green">+1.25%</span></p>
+        <p>Market Cap: $3.0T</p>
+      </div>
+    </div>
+  </div>
+</div>

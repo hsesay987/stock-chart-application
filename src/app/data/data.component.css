@@ -1,0 +1,99 @@
+.stock-dashboard {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.company-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.company-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.company-details h2 {
+  margin: 0;
+  font-size: 24px;
+}
+.company-details h2 span {
+  color: #777;
+  font-size: 18px;
+}
+.company-details p {
+  margin: 4px 0;
+}
+
+.chart-section {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.chart {
+  height: 500px;
+  width: 100%;
+}
+
+.no-data {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .company-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .company-logo {
+    margin-bottom: 10px;
+  }
+}
+.price-info {
+  font-size: 20px;
+  margin: 5px 0;
+}
+.price-info .price {
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: 10px;
+}
+.price-info .change.up {
+  color: green;
+}
+.price-info .change.down {
+  color: red;
+}
+
+.fundamentals {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+.fundamentals div {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .fundamentals {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}
